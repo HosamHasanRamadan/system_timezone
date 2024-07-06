@@ -1,0 +1,27 @@
+name: system_timezone_ios
+description: iOS implementation of the system_timezone plugin
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.4.0
+
+flutter:
+  plugin:
+    implements: system_timezone
+    platforms:
+      ios:
+        pluginClass: SystemTimezonePlugin
+        dartPluginClass: SystemTimezoneIOS
+
+dependencies:
+  flutter:
+    sdk: flutter
+  system_timezone_platform_interface:
+    path: ../system_timezone_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.8
+  very_good_analysis: ^5.1.0

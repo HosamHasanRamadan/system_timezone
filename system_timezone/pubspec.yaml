@@ -1,0 +1,48 @@
+name: system_timezone
+description: System Timezone
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.4.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        default_package: system_timezone_android
+      ios:
+        default_package: system_timezone_ios
+      linux:
+        default_package: system_timezone_linux
+      macos:
+        default_package: system_timezone_macos
+      web:
+        default_package: system_timezone_web
+      windows:
+        default_package: system_timezone_windows
+
+dependencies:
+  flutter:
+    sdk: flutter
+  system_timezone_android:
+    path: ../system_timezone_android
+  system_timezone_ios:
+    path: ../system_timezone_ios
+  system_timezone_linux:
+    path: ../system_timezone_linux
+  system_timezone_macos:
+    path: ../system_timezone_macos
+  system_timezone_platform_interface:
+    path: ../system_timezone_platform_interface
+  system_timezone_web:
+    path: ../system_timezone_web
+  system_timezone_windows:
+    path: ../system_timezone_windows
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.3
+  plugin_platform_interface: ^2.1.8
+  very_good_analysis: ^5.1.0

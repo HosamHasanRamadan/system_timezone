@@ -1,0 +1,26 @@
+name: system_timezone_macos
+description: MacOS implementation of the system_timezone plugin
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.4.0
+
+flutter:
+  plugin:
+    implements: system_timezone
+    platforms:
+      macos:
+        pluginClass: SystemTimezonePlugin
+        dartPluginClass: SystemTimezoneMacOS
+
+dependencies:
+  flutter:
+    sdk: flutter
+  system_timezone_platform_interface:
+    path: ../system_timezone_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^5.1.0
