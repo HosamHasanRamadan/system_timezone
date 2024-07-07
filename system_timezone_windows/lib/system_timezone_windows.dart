@@ -13,8 +13,17 @@ class SystemTimezoneWindows extends SystemTimezonePlatform {
     SystemTimezonePlatform.instance = SystemTimezoneWindows();
   }
 
+
+  
   @override
-  Future<String?> getPlatformName() {
-    return methodChannel.invokeMethod<String>('getPlatformName');
+  List<String> getSupportedTimezones() {
+    // TODO: implement getSupportedTimezones
+    throw UnimplementedError();
+  }
+  
+  @override
+  String? getTimezoneName() {
+    // TODO: implement getTimezoneName
+    throw UnimplementedError();
   }
 }

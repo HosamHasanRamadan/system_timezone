@@ -13,8 +13,18 @@ class SystemTimezoneAndroid extends SystemTimezonePlatform {
     SystemTimezonePlatform.instance = SystemTimezoneAndroid();
   }
 
+  
   @override
-  Future<String?> getPlatformName() {
-    return methodChannel.invokeMethod<String>('getPlatformName');
+  String? getTimezoneName() {
+    // TODO: implement getTimezoneName
+    throw UnimplementedError();
   }
+  
+  @override
+  List<String> getSupportedTimezones() {
+    // TODO: implement getSupportedTimezones
+    throw UnimplementedError();
+  }
+
+  
 }

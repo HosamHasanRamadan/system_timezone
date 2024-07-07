@@ -7,9 +7,19 @@ class MethodChannelSystemTimezone extends SystemTimezonePlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel = const MethodChannel('system_timezone');
+  
 
+  
   @override
-  Future<String?> getPlatformName() {
-    return methodChannel.invokeMethod<String>('getPlatformName');
+  String? getTimezoneName() {
+    throw UnimplementedError();
   }
+  
+  @override
+  List<String> getSupportedTimezones() {
+    // TODO: implement getSupportedTimezones
+    throw UnimplementedError();
+  }
+
+
 }

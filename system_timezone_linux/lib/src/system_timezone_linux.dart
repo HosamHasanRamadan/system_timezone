@@ -13,8 +13,14 @@ class SystemTimezoneLinux extends SystemTimezonePlatform {
     SystemTimezonePlatform.instance = SystemTimezoneLinux();
   }
 
+  List<String> getSupportedTimezones() {
+    // TODO: implement getSupportedTimezones
+    throw UnimplementedError();
+  }
+  
   @override
-  Future<String?> getPlatformName() {
-    return methodChannel.invokeMethod<String>('getPlatformName');
+  String? getTimezoneName() {
+    // TODO: implement getTimezoneName
+    throw UnimplementedError();
   }
 }

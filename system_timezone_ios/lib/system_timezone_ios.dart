@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:objective_c/objective_c.dart';
+import 'package:system_timezone_ios/timezone_bindings.dart';
 import 'package:system_timezone_platform_interface/system_timezone_platform_interface.dart';
 
 /// The iOS implementation of [SystemTimezonePlatform].
@@ -14,7 +16,20 @@ class SystemTimezoneIOS extends SystemTimezonePlatform {
   }
 
   @override
-  Future<String?> getPlatformName() {
-    return methodChannel.invokeMethod<String>('getPlatformName');
+  List<String> getSupportedTimezones() {
+    final result = NSTimeZone.getKnownTimeZoneNames();
+    final array = NSArray.castFrom(result);
+    return List.generate(
+      array.count,
+      (index) {
+        final item = NSString.castFrom(array.objectAtIndex_(index)).toString();
+        return item;
+      },
+    );
+  }
+
+  @override
+  String? getTimezoneName() {
+    return NSTimeZone.getSystemTimeZone().name.toString();
   }
 }
