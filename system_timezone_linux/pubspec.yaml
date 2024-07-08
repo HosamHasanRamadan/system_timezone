@@ -13,12 +13,12 @@ flutter:
       linux:
         pluginClass: SystemTimezonePlugin
         dartPluginClass: SystemTimezoneLinux
+        ffiPlugin: true
 
 dependencies:
   flutter:
     sdk: flutter
-  system_timezone_platform_interface:
-    path: ../system_timezone_platform_interface
+  system_timezone_platform_interface: any
 
 dev_dependencies:
   flutter_test:

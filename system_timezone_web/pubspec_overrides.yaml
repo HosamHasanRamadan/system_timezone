@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: system_timezone_platform_interface
+dependency_overrides:
+  system_timezone_platform_interface:
+    path: ../system_timezone_platform_interface

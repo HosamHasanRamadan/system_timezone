@@ -13,12 +13,12 @@ flutter:
       windows:
         pluginClass: SystemTimezoneWindows
         dartPluginClass: SystemTimezoneWindows
+        ffiPlugin: true
 
 dependencies:
   flutter:
     sdk: flutter
-  system_timezone_platform_interface:
-    path: ../system_timezone_platform_interface
+  system_timezone_platform_interface: any
   windows_globalization: ^0.1.0+1
 
 dev_dependencies:
