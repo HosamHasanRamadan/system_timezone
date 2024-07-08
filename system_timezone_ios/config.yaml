@@ -1,5 +1,5 @@
 name: NSTimeZone
-description: Bindings for AVFAudio.
+description: NSTimeZone bindings
 language: objc
 output: "lib/timezone_bindings.dart"
 exclude-all-by-default: true

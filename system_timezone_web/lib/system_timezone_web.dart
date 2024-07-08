@@ -8,25 +8,19 @@ class SystemTimezoneWeb extends SystemTimezonePlatform {
     SystemTimezonePlatform.instance = SystemTimezoneWeb();
   }
 
-  //Intl.supportedValuesOf("timeZone")
+  // Intl.supportedValuesOf("timeZone")
   @override
-  List<String> getSupportedTimezones() {
-    return _getSupportedTimezonesWeb('timeZone');
-  }
+  List<String> getSupportedTimezones() => _getSupportedTimezonesWeb('timeZone');
 
   // Intl.DateTimeFormat().resolvedOptions().timeZone
   @override
-  String? getTimezoneName() {
-    return _getLocalTimeZoneWeb();
-  }
+  String? getTimezoneName() => _getLocalTimeZoneWeb();
 }
 
-String _getLocalTimeZoneWeb() {
-  return jsDateTimeFormat().resolvedOptions().timeZone;
-}
+String _getLocalTimeZoneWeb() => jsDateTimeFormat().resolvedOptions().timeZone;
 
 @JS('Intl.supportedValuesOf')
-external List<String> _getSupportedTimezonesWeb(String value );
+external List<String> _getSupportedTimezonesWeb(String value);
 
 @JS('Intl.DateTimeFormat')
 external _JSDateTimeFormat jsDateTimeFormat();
