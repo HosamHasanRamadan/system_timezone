@@ -19,7 +19,7 @@ dependencies:
   flutter:
     sdk: flutter
   jni: ^0.9.3
-  system_timezone_platform_interface: any
+  system_timezone_platform_interface: ^0.1.0+1
 
 dev_dependencies:
   flutter_test:
