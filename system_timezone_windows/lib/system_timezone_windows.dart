@@ -1,13 +1,9 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
+import 'dart:io';
 import 'package:system_timezone_platform_interface/system_timezone_platform_interface.dart';
+import 'package:windows_globalization/windows_globalization.dart';
 
 /// The Windows implementation of [SystemTimezonePlatform].
 class SystemTimezoneWindows extends SystemTimezonePlatform {
-  /// The method channel used to interact with the native platform.
-  @visibleForTesting
-  final methodChannel = const MethodChannel('system_timezone_windows');
-
   /// Registers this class as the default instance of [SystemTimezonePlatform]
   static void registerWith() {
     SystemTimezonePlatform.instance = SystemTimezoneWindows();
@@ -17,13 +13,12 @@ class SystemTimezoneWindows extends SystemTimezonePlatform {
   
   @override
   List<String> getSupportedTimezones() {
-    // TODO: implement getSupportedTimezones
-    throw UnimplementedError();
+    final result  = Process.runSync('tzutil', ['/l']);
+    return result.stdout?.toString().split('\n').map((e) => e.trim(),).where((e) => e.isNotEmpty,) .toList() ?? [];
   }
   
   @override
   String? getTimezoneName() {
-    // TODO: implement getTimezoneName
-    throw UnimplementedError();
+    return Calendar().getTimeZone();
   }
 }
