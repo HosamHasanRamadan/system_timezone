@@ -7,7 +7,6 @@ class SystemTimezoneAndroid extends SystemTimezonePlatform {
   static void registerWith() {
     SystemTimezonePlatform.instance = SystemTimezoneAndroid();
   }
-
   
   @override
   String? getTimezoneName() {
@@ -19,5 +18,4 @@ class SystemTimezoneAndroid extends SystemTimezonePlatform {
     return TimeZoneUtil.Companion.getAvailableTimezones().toList().map((e) => e.toDartString(),).toList();
   }
 
-  
 }
