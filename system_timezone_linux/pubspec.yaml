@@ -11,9 +11,7 @@ flutter:
     implements: system_timezone
     platforms:
       linux:
-        pluginClass: SystemTimezonePlugin
         dartPluginClass: SystemTimezoneLinux
-        ffiPlugin: true
 
 dependencies:
   flutter:
