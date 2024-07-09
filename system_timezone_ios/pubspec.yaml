@@ -12,7 +12,6 @@ flutter:
     platforms:
       ios:
         dartPluginClass: SystemTimezoneIOS
-        ffiPlugin: true
 
 dependencies:
   flutter:

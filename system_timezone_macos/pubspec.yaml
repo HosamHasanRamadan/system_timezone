@@ -12,7 +12,6 @@ flutter:
     platforms:
       macos:
         dartPluginClass: SystemTimezoneMacOS
-        ffiPlugin: true
 
 dependencies:
   flutter:
