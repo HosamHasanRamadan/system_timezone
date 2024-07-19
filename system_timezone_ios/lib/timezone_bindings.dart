@@ -5,6 +5,7 @@
 import 'dart:ffi' as ffi;
 import 'package:objective_c/objective_c.dart' as objc;
 
+/// NSTimeZone
 class NSTimeZone extends objc.NSObject {
   NSTimeZone._(ffi.Pointer<objc.ObjCObject> pointer,
       {bool retain = false, bool release = false})
@@ -24,21 +25,25 @@ class NSTimeZone extends objc.NSObject {
     return _objc_msgSend_0(obj.pointer, _sel_isKindOfClass_, _class_NSTimeZone);
   }
 
+  /// name
   objc.NSString get name {
     final _ret = _objc_msgSend_1(this.pointer, _sel_name);
     return objc.NSString.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// data
   objc.NSData get data {
     final _ret = _objc_msgSend_2(this.pointer, _sel_data);
     return objc.NSData.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// secondsFromGMTForDate:
   int secondsFromGMTForDate_(objc.NSDate aDate) {
     return _objc_msgSend_3(
         this.pointer, _sel_secondsFromGMTForDate_, aDate.pointer);
   }
 
+  /// abbreviationForDate:
   objc.NSString? abbreviationForDate_(objc.NSDate aDate) {
     final _ret =
         _objc_msgSend_4(this.pointer, _sel_abbreviationForDate_, aDate.pointer);
@@ -47,11 +52,13 @@ class NSTimeZone extends objc.NSObject {
         : objc.NSString.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// isDaylightSavingTimeForDate:
   bool isDaylightSavingTimeForDate_(objc.NSDate aDate) {
     return _objc_msgSend_5(
         this.pointer, _sel_isDaylightSavingTimeForDate_, aDate.pointer);
   }
 
+  /// daylightSavingTimeOffsetForDate:
   double daylightSavingTimeOffsetForDate_(objc.NSDate aDate) {
     return objc.useMsgSendVariants
         ? _objc_msgSend_6Fpret(
@@ -60,6 +67,7 @@ class NSTimeZone extends objc.NSObject {
             this.pointer, _sel_daylightSavingTimeOffsetForDate_, aDate.pointer);
   }
 
+  /// nextDaylightSavingTimeTransitionAfterDate:
   objc.NSDate? nextDaylightSavingTimeTransitionAfterDate_(objc.NSDate aDate) {
     final _ret = _objc_msgSend_7(this.pointer,
         _sel_nextDaylightSavingTimeTransitionAfterDate_, aDate.pointer);
@@ -68,55 +76,66 @@ class NSTimeZone extends objc.NSObject {
         : objc.NSDate.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// systemTimeZone
   static NSTimeZone getSystemTimeZone() {
     final _ret = _objc_msgSend_8(_class_NSTimeZone, _sel_systemTimeZone);
     return NSTimeZone.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// resetSystemTimeZone
   static void resetSystemTimeZone() {
     _objc_msgSend_9(_class_NSTimeZone, _sel_resetSystemTimeZone);
   }
 
+  /// defaultTimeZone
   static NSTimeZone getDefaultTimeZone() {
     final _ret = _objc_msgSend_8(_class_NSTimeZone, _sel_defaultTimeZone);
     return NSTimeZone.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// setDefaultTimeZone:
   static void setDefaultTimeZone(NSTimeZone value) {
     return _objc_msgSend_10(
         _class_NSTimeZone, _sel_setDefaultTimeZone_, value.pointer);
   }
 
+  /// localTimeZone
   static NSTimeZone getLocalTimeZone() {
     final _ret = _objc_msgSend_8(_class_NSTimeZone, _sel_localTimeZone);
     return NSTimeZone.castFromPointer(_ret, retain: true, release: true);
   }
 
-  static objc.NSObject getKnownTimeZoneNames() {
+  /// knownTimeZoneNames
+  static objc.ObjCObjectBase getKnownTimeZoneNames() {
     final _ret = _objc_msgSend_11(_class_NSTimeZone, _sel_knownTimeZoneNames);
-    return objc.NSObject.castFromPointer(_ret, retain: true, release: true);
+    return objc.ObjCObjectBase(_ret, retain: true, release: true);
   }
 
+  /// abbreviationDictionary
   static objc.NSDictionary getAbbreviationDictionary() {
     final _ret =
         _objc_msgSend_12(_class_NSTimeZone, _sel_abbreviationDictionary);
     return objc.NSDictionary.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// setAbbreviationDictionary:
   static void setAbbreviationDictionary(objc.NSDictionary value) {
     return _objc_msgSend_13(
         _class_NSTimeZone, _sel_setAbbreviationDictionary_, value.pointer);
   }
 
+  /// timeZoneDataVersion
   static objc.NSString getTimeZoneDataVersion() {
     final _ret = _objc_msgSend_1(_class_NSTimeZone, _sel_timeZoneDataVersion);
     return objc.NSString.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// secondsFromGMT
   int get secondsFromGMT {
     return _objc_msgSend_14(this.pointer, _sel_secondsFromGMT);
   }
 
+  /// abbreviation
   objc.NSString? get abbreviation {
     final _ret = _objc_msgSend_15(this.pointer, _sel_abbreviation);
     return _ret.address == 0
@@ -124,16 +143,19 @@ class NSTimeZone extends objc.NSObject {
         : objc.NSString.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// isDaylightSavingTime
   bool get daylightSavingTime {
     return _objc_msgSend_16(this.pointer, _sel_isDaylightSavingTime);
   }
 
+  /// daylightSavingTimeOffset
   double get daylightSavingTimeOffset {
     return objc.useMsgSendVariants
         ? _objc_msgSend_17Fpret(this.pointer, _sel_daylightSavingTimeOffset)
         : _objc_msgSend_17(this.pointer, _sel_daylightSavingTimeOffset);
   }
 
+  /// nextDaylightSavingTimeTransition
   objc.NSDate? get nextDaylightSavingTimeTransition {
     final _ret =
         _objc_msgSend_18(this.pointer, _sel_nextDaylightSavingTimeTransition);
@@ -142,24 +164,29 @@ class NSTimeZone extends objc.NSObject {
         : objc.NSDate.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// description
   objc.NSString get description {
     final _ret = _objc_msgSend_1(this.pointer, _sel_description);
     return objc.NSString.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// isEqualToTimeZone:
   bool isEqualToTimeZone_(NSTimeZone aTimeZone) {
     return _objc_msgSend_19(
         this.pointer, _sel_isEqualToTimeZone_, aTimeZone.pointer);
   }
 
-  objc.NSString? localizedName_locale_(int style, objc.NSLocale? locale) {
+  /// localizedName:locale:
+  objc.NSString? localizedName_locale_(
+      NSTimeZoneNameStyle style, objc.NSLocale? locale) {
     final _ret = _objc_msgSend_20(this.pointer, _sel_localizedName_locale_,
-        style, locale?.pointer ?? ffi.nullptr);
+        style.value, locale?.pointer ?? ffi.nullptr);
     return _ret.address == 0
         ? null
         : objc.NSString.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// timeZoneWithName:
   static NSTimeZone? timeZoneWithName_(objc.NSString tzName) {
     final _ret = _objc_msgSend_21(
         _class_NSTimeZone, _sel_timeZoneWithName_, tzName.pointer);
@@ -168,6 +195,7 @@ class NSTimeZone extends objc.NSObject {
         : NSTimeZone.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// timeZoneWithName:data:
   static NSTimeZone? timeZoneWithName_data_(
       objc.NSString tzName, objc.NSData? aData) {
     final _ret = _objc_msgSend_22(
@@ -180,6 +208,7 @@ class NSTimeZone extends objc.NSObject {
         : NSTimeZone.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// initWithName:
   NSTimeZone? initWithName_(objc.NSString tzName) {
     final _ret =
         _objc_msgSend_21(this.pointer, _sel_initWithName_, tzName.pointer);
@@ -188,6 +217,7 @@ class NSTimeZone extends objc.NSObject {
         : NSTimeZone.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// initWithName:data:
   NSTimeZone? initWithName_data_(objc.NSString tzName, objc.NSData? aData) {
     final _ret = _objc_msgSend_22(this.pointer, _sel_initWithName_data_,
         tzName.pointer, aData?.pointer ?? ffi.nullptr);
@@ -196,12 +226,14 @@ class NSTimeZone extends objc.NSObject {
         : NSTimeZone.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// timeZoneForSecondsFromGMT:
   static NSTimeZone timeZoneForSecondsFromGMT_(int seconds) {
     final _ret = _objc_msgSend_23(
         _class_NSTimeZone, _sel_timeZoneForSecondsFromGMT_, seconds);
     return NSTimeZone.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// timeZoneWithAbbreviation:
   static NSTimeZone? timeZoneWithAbbreviation_(objc.NSString abbreviation) {
     final _ret = _objc_msgSend_21(_class_NSTimeZone,
         _sel_timeZoneWithAbbreviation_, abbreviation.pointer);
@@ -210,22 +242,25 @@ class NSTimeZone extends objc.NSObject {
         : NSTimeZone.castFromPointer(_ret, retain: true, release: true);
   }
 
-  @override
+  /// init
   NSTimeZone init() {
     final _ret = _objc_msgSend_11(this.pointer, _sel_init);
     return NSTimeZone.castFromPointer(_ret, retain: true, release: true);
   }
 
+  /// new
   static NSTimeZone new1() {
     final _ret = _objc_msgSend_11(_class_NSTimeZone, _sel_new);
     return NSTimeZone.castFromPointer(_ret, retain: false, release: true);
   }
 
+  /// allocWithZone:
   static NSTimeZone allocWithZone_(ffi.Pointer<_NSZone> zone) {
     final _ret = _objc_msgSend_24(_class_NSTimeZone, _sel_allocWithZone_, zone);
     return NSTimeZone.castFromPointer(_ret, retain: false, release: true);
   }
 
+  /// alloc
   static NSTimeZone alloc() {
     final _ret = _objc_msgSend_11(_class_NSTimeZone, _sel_alloc);
     return NSTimeZone.castFromPointer(_ret, retain: false, release: true);
@@ -453,13 +488,27 @@ final _objc_msgSend_19 = objc.msgSendPointer
         bool Function(ffi.Pointer<objc.ObjCObject>,
             ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.ObjCObject>)>();
 
-abstract class NSTimeZoneNameStyle {
-  static const int NSTimeZoneNameStyleStandard = 0;
-  static const int NSTimeZoneNameStyleShortStandard = 1;
-  static const int NSTimeZoneNameStyleDaylightSaving = 2;
-  static const int NSTimeZoneNameStyleShortDaylightSaving = 3;
-  static const int NSTimeZoneNameStyleGeneric = 4;
-  static const int NSTimeZoneNameStyleShortGeneric = 5;
+enum NSTimeZoneNameStyle {
+  NSTimeZoneNameStyleStandard(0),
+  NSTimeZoneNameStyleShortStandard(1),
+  NSTimeZoneNameStyleDaylightSaving(2),
+  NSTimeZoneNameStyleShortDaylightSaving(3),
+  NSTimeZoneNameStyleGeneric(4),
+  NSTimeZoneNameStyleShortGeneric(5);
+
+  final int value;
+  const NSTimeZoneNameStyle(this.value);
+
+  static NSTimeZoneNameStyle fromValue(int value) => switch (value) {
+        0 => NSTimeZoneNameStyleStandard,
+        1 => NSTimeZoneNameStyleShortStandard,
+        2 => NSTimeZoneNameStyleDaylightSaving,
+        3 => NSTimeZoneNameStyleShortDaylightSaving,
+        4 => NSTimeZoneNameStyleGeneric,
+        5 => NSTimeZoneNameStyleShortGeneric,
+        _ =>
+          throw ArgumentError("Unknown value for NSTimeZoneNameStyle: $value"),
+      };
 }
 
 late final _sel_localizedName_locale_ =
@@ -470,7 +519,7 @@ final _objc_msgSend_20 = objc.msgSendPointer
             ffi.Pointer<objc.ObjCObject> Function(
                 ffi.Pointer<objc.ObjCObject>,
                 ffi.Pointer<objc.ObjCSelector>,
-                ffi.Int32,
+                ffi.UnsignedLong,
                 ffi.Pointer<objc.ObjCObject>)>>()
     .asFunction<
         ffi.Pointer<objc.ObjCObject> Function(
@@ -479,7 +528,7 @@ final _objc_msgSend_20 = objc.msgSendPointer
             int,
             ffi.Pointer<objc.ObjCObject>)>();
 typedef instancetype = ffi.Pointer<objc.ObjCObject>;
-typedef Dartinstancetype = objc.NSObject;
+typedef Dartinstancetype = objc.ObjCObjectBase;
 late final _sel_timeZoneWithName_ = objc.registerName("timeZoneWithName:");
 final _objc_msgSend_21 = objc.msgSendPointer
     .cast<

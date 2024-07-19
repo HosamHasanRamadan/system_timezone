@@ -17,13 +17,13 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  jni: ^0.9.3
+  jni: ^0.10.1
   system_timezone_platform_interface: 
     path: ../system_timezone_platform_interface
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  jnigen: ^0.9.3
+  jnigen: ^0.10.0
   plugin_platform_interface: ^2.1.8
   very_good_analysis: ^5.1.0
