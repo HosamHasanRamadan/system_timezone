@@ -12,15 +12,17 @@ flutter:
     platforms:
       windows:
         dartPluginClass: SystemTimezoneWindows
+        ffiPlugin: true
 
 dependencies:
+  ffi: ^2.1.2
   flutter:
     sdk: flutter
   system_timezone_platform_interface: 
     path: ../system_timezone_platform_interface
-  windows_globalization: ^0.1.0+1
 
 dev_dependencies:
+  ffigen: ^13.0.0
   flutter_test:
     sdk: flutter
   very_good_analysis: ^5.1.0
