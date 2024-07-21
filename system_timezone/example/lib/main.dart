@@ -1,9 +1,11 @@
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:system_timezone/system_timezone.dart';
 
 void main() => runApp(const MyApp());
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -22,7 +24,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String? _platformName;
+  String? timezone;
+  String? timezones;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +37,18 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                if (_platformName == null)
+                if (timezone == null)
                   const SizedBox.shrink()
                 else
                   Text(
-                    'Platform Name: $_platformName',
+                    'Platform Name: $timezone',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                if (timezones == null)
+                  const SizedBox.shrink()
+                else
+                  Text(
+                    'Platform Name: $timezones',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 const SizedBox(height: 16),
@@ -46,8 +56,12 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () async {
                     if (!context.mounted) return;
                     try {
-                      final result =  getSupportedTimezones();
-                      setState(() => _platformName = result.toString());
+                      final tz = getTimezoneName();
+                       final tzs = getSupportedTimezones();
+                
+                      setState(() => timezones = tzs.toString());
+                
+                      setState(() => timezone = tz.toString());
                     } catch (error,s) {
                       log('Hello',error: error,stackTrace:s);
                       if (!context.mounted) return;
