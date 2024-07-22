@@ -2,6 +2,7 @@ name: system_timezone_linux
 description: Linux implementation of the system_timezone plugin
 version: 0.1.0+1
 publish_to: none
+repository: https://github.com/HosamHasanRamadan/system_timezone
 
 environment:
   sdk: ^3.4.0
