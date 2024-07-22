@@ -18,8 +18,7 @@ dependencies:
   ffi: ^2.1.2
   flutter:
     sdk: flutter
-  system_timezone_platform_interface: 
-    path: ../system_timezone_platform_interface
+  system_timezone_platform_interface: ^0.1.0+1
 
 dev_dependencies:
   ffigen: ^13.0.0

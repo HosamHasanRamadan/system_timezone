@@ -20,8 +20,7 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   js: ^0.7.1
-  system_timezone_platform_interface: 
-    path: ../system_timezone_platform_interface
+  system_timezone_platform_interface: ^0.1.0+1
 
 dev_dependencies:
   flutter_test:
