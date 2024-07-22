@@ -17,7 +17,7 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  system_timezone_platform_interface: ^0.1.0+1
+  system_timezone_platform_interface: ^0.1.1+2
 
 dev_dependencies:
   flutter_test:
