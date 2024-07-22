@@ -1,7 +1,6 @@
 name: system_timezone_example
 description: Demonstrates how to use the system_timezone plugin.
 version: 0.1.0+1
-publish_to: none
 
 environment:
   sdk: ^3.4.0

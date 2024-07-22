@@ -1,7 +1,6 @@
 name: system_timezone
 description: System Timezone
 version: 0.1.0+1
-publish_to: none
 repository: https://github.com/HosamHasanRamadan/system_timezone
 
 environment:

@@ -1,7 +1,6 @@
 name: system_timezone_windows
 description: Windows implementation of the system_timezone plugin
 version: 0.1.0+1
-publish_to: none
 repository: https://github.com/HosamHasanRamadan/system_timezone
 
 environment:
