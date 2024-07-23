@@ -18,20 +18,16 @@ class SystemTimezoneLinux extends SystemTimezonePlatform {
   @override
   List<String> getSupportedTimezones() {
     final command = Process.runSync('timedatectl', ['list-timezones']);
-    return command.stdout?.toString().split('\n').map((e) => e.trim()).toList(growable: false) ?? [];
+    // remove last element which is empty string
+    final timezones = command.stdout?.toString().split('\n')?..removeLast();
+    return timezones?.toList(growable: false) ?? [];
   }
 
   @override
   String? getTimezoneName() {
-    final command = Process.runSync('timedatectl', []);
-    final lines = command.stdout?.toString().split('\n').map((e) => e.trim(),);
-    if (lines == null || lines.isEmpty) return null;
-    const timeZoneLine = 'Time zone';
-    for(final line in lines){
-      if(line.contains(timeZoneLine)){
-        return line.split(' ')[2];
-      }
-    }
-    return null;
+    final command = Process.runSync('timedatectl', ['show','-p','Timezone']);
+    final segmants = command.stdout?.toString().split('=');
+    if (segmants == null || segmants.isEmpty) return null;  
+    return segmants.elementAtOrNull(1);
   }
 }
