@@ -1,4 +1,17 @@
-# melos_managed_dependency_overrides: system_timezone
 dependency_overrides:
   system_timezone:
     path: ../
+  system_timezone_android:
+    path: ../../system_timezone_android
+  system_timezone_ios:
+    path: ../../system_timezone_ios
+  system_timezone_linux:
+    path: ../../system_timezone_linux
+  system_timezone_macos:
+    path: ../../system_timezone_macos
+  system_timezone_platform_interface:
+    path: ../../system_timezone_platform_interface
+  system_timezone_web:
+    path: ../../system_timezone_web
+  system_timezone_windows:
+    path: ../../system_timezone_windows
