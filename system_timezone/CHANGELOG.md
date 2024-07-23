@@ -1,8 +1,13 @@
 # Changelog
 
+## 0.1.2+3
+
+- [refactor] change package api
+
 ## 0.1.1+2
 
 ### Linux 
+
 - [fix] remove empty item in list of timezones
 - [refactor] improve implementation
 
