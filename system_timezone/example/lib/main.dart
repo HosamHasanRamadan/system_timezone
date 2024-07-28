@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                     if (!context.mounted) return;
                     try {
                       final tz = SystemTimezone.getTimezoneName();
-                       final tzs = SystemTimezone.getSupportedTimezones();
+                       final tzs = SystemTimezone.getKnownTimezoneNames();
                 
                       setState(() => timezones = tzs.toString());
                 
