@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0+1
+
+- pre-release version
+
 ## 0.1.2+3
 
 - [refactor] change package api

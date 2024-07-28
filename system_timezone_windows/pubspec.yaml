@@ -1,6 +1,6 @@
 name: system_timezone_windows
 description: Windows implementation of the system_timezone plugin
-version: 0.1.0+1
+version: 0.2.0+1
 repository: https://github.com/HosamHasanRamadan/system_timezone
 
 environment:
@@ -19,7 +19,7 @@ dependencies:
   ffi: ^2.1.2
   flutter:
     sdk: flutter
-  system_timezone_platform_interface: ^0.1.1+2
+  system_timezone_platform_interface: ^0.2.0+1
 
 dev_dependencies:
   ffigen: ^13.0.0

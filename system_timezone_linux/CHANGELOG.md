@@ -1,4 +1,9 @@
 # Changelog
+
+## 0.2.0+1
+
+- pre-release version
+
 ## 0.1.1+2
 
 - [fix] remove empty item in list of timezones
