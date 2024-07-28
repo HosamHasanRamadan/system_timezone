@@ -1,5 +1,5 @@
 name: system_timezone
-description: System Timezone
+description: FFI plugin to get IANA timezone
 version: 0.1.2+3
 repository: https://github.com/HosamHasanRamadan/system_timezone
 
