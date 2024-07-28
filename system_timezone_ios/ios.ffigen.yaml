@@ -1,7 +1,7 @@
 name: NSTimeZone
 description: NSTimeZone bindings
 language: objc
-output: "lib/timezone_bindings.dart"
+output: "lib/src/timezone_bindings.dart"
 exclude-all-by-default: true
 objc-interfaces:
   include:

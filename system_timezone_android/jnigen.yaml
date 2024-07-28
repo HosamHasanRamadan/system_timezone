@@ -4,7 +4,7 @@ android_sdk_config:
 
 output:
   dart:
-    path: lib/timezone_util.dart
+    path: lib/src/timezone_util.dart
     structure: single_file
 
 source_path:

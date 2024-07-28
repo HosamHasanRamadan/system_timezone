@@ -40,14 +40,14 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox.shrink()
                 else
                   Text(
-                    'Platform Name: $timezone',
+                    'Current Timezone: $timezone',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 if (timezones == null)
                   const SizedBox.shrink()
                 else
                   Text(
-                    'Platform Name: $timezones',
+                    'Known Timezones: $timezones',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 const SizedBox(height: 16),

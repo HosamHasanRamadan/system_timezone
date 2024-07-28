@@ -4,7 +4,7 @@ description: |
   Bindings for `windows/src/system_timezone_windows.h`.
 
   Regenerate bindings with `dart run ffigen --config ffigen.yaml`.
-output: 'lib/system_timezone_windows_bindings_generated.dart'
+output: 'lib/src/system_timezone_windows_bindings_generated.dart'
 llvm-path:
   - 'd:\Program Files\LLVM'
 headers:

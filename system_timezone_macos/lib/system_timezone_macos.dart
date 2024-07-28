@@ -1,5 +1,5 @@
 import 'package:objective_c/objective_c.dart';
-import 'package:system_timezone_macos/timezone_bindings.dart';
+import 'package:system_timezone_macos/src/timezone_bindings.dart';
 import 'package:system_timezone_platform_interface/system_timezone_platform_interface.dart';
 
 /// The MacOS implementation of [SystemTimezonePlatform].

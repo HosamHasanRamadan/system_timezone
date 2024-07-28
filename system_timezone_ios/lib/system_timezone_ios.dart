@@ -1,5 +1,5 @@
 import 'package:objective_c/objective_c.dart';
-import 'package:system_timezone_ios/timezone_bindings.dart';
+import 'package:system_timezone_ios/src/timezone_bindings.dart';
 import 'package:system_timezone_platform_interface/system_timezone_platform_interface.dart';
 
 /// The iOS implementation of [SystemTimezonePlatform].

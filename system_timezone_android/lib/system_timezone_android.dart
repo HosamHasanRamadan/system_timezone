@@ -1,4 +1,4 @@
-import 'package:system_timezone_android/timezone_util.dart';
+import 'package:system_timezone_android/src/timezone_util.dart';
 import 'package:system_timezone_platform_interface/system_timezone_platform_interface.dart';
 
 /// The Android implementation of [SystemTimezonePlatform].
