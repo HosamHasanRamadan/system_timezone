@@ -13,7 +13,7 @@ class SystemTimezoneWindows extends SystemTimezonePlatform {
   }
 
   @override
-  List<String> getSupportedTimezones() => _timezones();
+  List<String> getKnownTimezoneNames() => _timezones();
 
   @override
   String? getTimezoneName() => _timezone();

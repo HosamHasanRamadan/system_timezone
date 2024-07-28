@@ -32,5 +32,5 @@ abstract class SystemTimezonePlatform extends PlatformInterface {
   String? getTimezoneName();
 
     /// Return the current platform name.
-  List<String> getSupportedTimezones();
+  List<String> getKnownTimezoneNames();
 }

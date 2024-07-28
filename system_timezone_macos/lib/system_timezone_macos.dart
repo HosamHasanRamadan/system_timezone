@@ -11,7 +11,7 @@ class SystemTimezoneMacOS extends SystemTimezonePlatform {
   }
 
   @override
-  List<String> getSupportedTimezones() {
+  List<String> getKnownTimezoneNames() {
     final result = NSTimeZone.getKnownTimeZoneNames();
     final array = NSArray.castFrom(result);
     return List.generate(

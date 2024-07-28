@@ -14,7 +14,7 @@ class SystemTimezoneAndroid extends SystemTimezonePlatform {
   }
   
   @override
-  List<String> getSupportedTimezones() {
+  List<String> getKnownTimezoneNames() {
     return TimeZoneUtil.Companion.getAvailableTimezones().toList().map((e) => e.toDartString(),).toList();
   }
 

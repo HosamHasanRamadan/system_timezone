@@ -16,7 +16,7 @@ class SystemTimezoneLinux extends SystemTimezonePlatform {
   }
 
   @override
-  List<String> getSupportedTimezones() {
+  List<String> getKnownTimezoneNames() {
     final command = Process.runSync('timedatectl', ['list-timezones']);
     // remove last element which is empty string
     final timezones = command.stdout?.toString().split('\n')?..removeLast();

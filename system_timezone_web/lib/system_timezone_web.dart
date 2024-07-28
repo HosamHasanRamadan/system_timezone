@@ -10,7 +10,7 @@ class SystemTimezoneWeb extends SystemTimezonePlatform {
 
   // Intl.supportedValuesOf("timeZone")
   @override
-  List<String> getSupportedTimezones() => _getSupportedTimezonesWeb('timeZone');
+  List<String> getKnownTimezoneNames() => _getSupportedTimezonesWeb('timeZone');
 
   // Intl.DateTimeFormat().resolvedOptions().timeZone
   @override

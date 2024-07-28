@@ -15,7 +15,7 @@ abstract final class SystemTimezone {
 
   /// Returns list of supported timezones
   static List<String> getSupportedTimezones() {
-    final platformName = _platform.getSupportedTimezones();
+    final platformName = _platform.getKnownTimezoneNames();
     return platformName;
   }
 }

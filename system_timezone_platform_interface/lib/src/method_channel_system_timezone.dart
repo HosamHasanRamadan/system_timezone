@@ -16,8 +16,7 @@ class MethodChannelSystemTimezone extends SystemTimezonePlatform {
   }
   
   @override
-  List<String> getSupportedTimezones() {
-    // TODO: implement getSupportedTimezones
+  List<String> getKnownTimezoneNames() {
     throw UnimplementedError();
   }
 
