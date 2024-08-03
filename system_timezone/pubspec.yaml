@@ -1,6 +1,6 @@
 name: system_timezone
 description: FFI plugin to get IANA timezone
-version: 0.2.0+1
+version: 0.2.1+1
 repository: https://github.com/HosamHasanRamadan/system_timezone
 
 environment:
@@ -26,13 +26,13 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  system_timezone_android: ^0.2.0+1
+  system_timezone_android: ^0.2.1+1
   system_timezone_ios: ^0.2.0+1
   system_timezone_linux: ^0.2.0+1
   system_timezone_macos: ^0.2.0+1
   system_timezone_platform_interface: ^0.2.0+1
   system_timezone_web: ^0.2.0+1
-  system_timezone_windows: ^0.2.0+1
+  system_timezone_windows: ^0.2.1+1
 
 dev_dependencies:
   flutter_test:

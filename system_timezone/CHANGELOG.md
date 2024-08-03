@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1+1
+
+- fix memory leak `android` , `windows`
+
 ## 0.2.0+1
 
 - pre-release version
@@ -10,7 +14,7 @@
 
 ## 0.1.1+2
 
-### Linux 
+### Linux
 
 - [fix] remove empty item in list of timezones
 - [refactor] improve implementation
