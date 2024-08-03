@@ -7,15 +7,22 @@ class SystemTimezoneAndroid extends SystemTimezonePlatform {
   static void registerWith() {
     SystemTimezonePlatform.instance = SystemTimezoneAndroid();
   }
-  
+
   @override
   String? getTimezoneName() {
-    return TimeZoneUtil.Companion.getLocalTimezone().toDartString();
-  }
-  
-  @override
-  List<String> getKnownTimezoneNames() {
-    return TimeZoneUtil.Companion.getAvailableTimezones().toList().map((e) => e.toDartString(),).toList();
+    return TimeZoneUtil.Companion.getLocalTimezone()
+        .toDartString(releaseOriginal: true);
   }
 
+  @override
+  List<String> getKnownTimezoneNames() {
+    final jList = TimeZoneUtil.Companion.getAvailableTimezones();
+    try {
+      return jList
+          .map((e) => e.toDartString(releaseOriginal: true))
+          .toList(growable: false);
+    } finally {
+      jList.release();
+    }
+  }
 }
