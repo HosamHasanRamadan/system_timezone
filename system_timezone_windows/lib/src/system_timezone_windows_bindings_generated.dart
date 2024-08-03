@@ -44,6 +44,34 @@ class SystemTimezoneBindings {
       _lookup<ffi.NativeFunction<ffi.Pointer<MyList> Function()>>('timezones');
   late final _timezones =
       _timezonesPtr.asFunction<ffi.Pointer<MyList> Function()>();
+
+  void free_pointer_mylist(
+    ffi.Pointer<MyList> ptr,
+  ) {
+    return _free_pointer_mylist(
+      ptr,
+    );
+  }
+
+  late final _free_pointer_mylistPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<MyList>)>>(
+          'free_pointer_mylist');
+  late final _free_pointer_mylist =
+      _free_pointer_mylistPtr.asFunction<void Function(ffi.Pointer<MyList>)>();
+
+  void free_pointer_mystring(
+    ffi.Pointer<MyString> ptr,
+  ) {
+    return _free_pointer_mystring(
+      ptr,
+    );
+  }
+
+  late final _free_pointer_mystringPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<MyString>)>>(
+          'free_pointer_mystring');
+  late final _free_pointer_mystring = _free_pointer_mystringPtr
+      .asFunction<void Function(ffi.Pointer<MyString>)>();
 }
 
 final class MyString extends ffi.Struct {

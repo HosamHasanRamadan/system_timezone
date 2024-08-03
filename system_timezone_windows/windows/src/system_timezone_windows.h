@@ -30,3 +30,7 @@ struct MyList {
 FFI_PLUGIN_EXPORT struct MyString* timezone();
 
 FFI_PLUGIN_EXPORT struct MyList* timezones();
+
+FFI_PLUGIN_EXPORT void free_pointer_mylist(struct MyList* ptr);
+
+FFI_PLUGIN_EXPORT void free_pointer_mystring(struct MyString* ptr);

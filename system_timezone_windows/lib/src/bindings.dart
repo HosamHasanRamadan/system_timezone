@@ -1,4 +1,3 @@
-
 import 'dart:ffi';
 import 'dart:io';
 
@@ -18,26 +17,40 @@ final DynamicLibrary _dylib = () {
 /// The bindings to the native functions in [_dylib].
 final SystemTimezoneBindings _bindings = SystemTimezoneBindings(_dylib);
 
-String?  get nativeTimezoneName {
-  final a = _bindings.timezone();
-  if(a == nullptr) return null;
-  return _convertFFIPointerToString(a.ref.stringValue,a.ref.stringSize);
+String? get nativeTimezoneName {
+  late final Pointer<MyString> timezonePointer;
+  try {
+    timezonePointer = _bindings.timezone();
+    if (timezonePointer == nullptr) return null;
+    return _convertFFIPointerToString(
+      timezonePointer.ref.stringValue,
+      timezonePointer.ref.stringSize,
+    );
+  } finally {
+    _bindings.free_pointer_mystring(timezonePointer);
+  }
 }
 
 List<String> get nativeKnownTimezoneNames {
-  final a = _bindings.timezones();
-  if (a == nullptr) return [];
-  final value = a.ref;
-  return _convertFFIPointerToStringList(
-    value.listValue,
-    value.listElementSize,
-    value.listSize,
-  );
+  late final Pointer<MyList> timezonesPointer;
+  try {
+    timezonesPointer = _bindings.timezones();
+    if (timezonesPointer == nullptr) return [];
+    return _convertFFIPointerToStringList(
+      timezonesPointer.ref.listValue,
+      timezonesPointer.ref.listElementSize,
+      timezonesPointer.ref.listSize,
+    );
+  } finally {
+    _bindings.free_pointer_mylist(timezonesPointer);
+  }
 }
+
 String _convertFFIPointerToString(
   Pointer<Char> pointer,
   int stringSize,
-) => pointer.cast<ffi.Utf8>().toDartString();
+) =>
+    pointer.cast<ffi.Utf8>().toDartString();
 
 List<String> _convertFFIPointerToStringList(
   Pointer<Pointer<Char>> pointer,

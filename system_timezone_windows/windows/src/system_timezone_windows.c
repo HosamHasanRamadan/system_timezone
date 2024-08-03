@@ -90,3 +90,17 @@ FFI_PLUGIN_EXPORT struct MyList* timezones() {
     uenum_close(timeZones);
     return result;
 }
+
+
+ void free_pointer_mylist(struct MyList* ptr){
+    for (int32_t j = 0; j < ptr->listSize; j++) {
+        free(ptr->listValue[j]);
+    }
+    free(ptr->listValue);
+    free(ptr);
+ }
+
+ void free_pointer_mystring(struct MyString* ptr){
+    free(ptr->stringValue);
+    free(ptr);
+ }
